@@ -2,6 +2,7 @@ from RSU_v2.interface import *
 from RSU_v2.arquivo import *
 from time import sleep
 
+# Definindo os nomes dos arquivos
 arqMatOrg = 'materiaorganica.txt'
 arqPapPap = 'papelpapelao.txt'
 arqPlast = 'platico.txt'

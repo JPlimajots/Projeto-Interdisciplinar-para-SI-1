@@ -24,7 +24,7 @@ def criarArquivo(nome):
         print(f'Arquivo {nome} criado com sucesso!')
 
 
-def lerArquivo(nome):
+'''def lerArquivo(nome):
     try:
         a = open(nome, 'rt')
     except:
@@ -36,7 +36,7 @@ def lerArquivo(nome):
             dado[1] = dado[1].replace('\n', '')
             print(f'{dado[0]:<30}{dado[1]:>3} kg')
     finally:
-        a.close()
+        a.close()'''
 
 
 def entrada(arq, linha, quantidade):
