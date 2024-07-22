@@ -16,7 +16,7 @@ def criarArquivo(nome):
         a = open(nome, 'wt+')
         a.close()
         a = open(nome,'at')
-        a.write('0\n')
+        a.write('0')
         a.close()
     except:
         print('Houve um ERRO na criação do arquivo!')
@@ -39,20 +39,18 @@ def criarArquivo(nome):
         a.close()'''
 
 
-def entrada(arq, linha, quantidade):
+def entrada(arq, quantidade):
     try:
         a = open(arq, 'rt')
-        dados = a.readlines()
+        dado = a.readline()
+        a.close
         a = open(arq, 'wt')
     except:
         print('Houve um ERRO na abertura do arquivo!')
     else:
         try:
-            for l in dados:
-                if dados.index(l) == linha:
-                    a.write(f'{quantidade}\n')
-                else:
-                    a.write(l)
+            soma = quantidade + float(dado)
+            a.write(str(soma))          
         except:
             print('Houve um ERRO na hora de escrever os dados!')
         else:

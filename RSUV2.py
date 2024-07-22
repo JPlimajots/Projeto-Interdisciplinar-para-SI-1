@@ -33,7 +33,7 @@ while True:
         if residuo == 1:
             # Depositando Mat. Org.
             quantidade = float(input('Quantos kg de Matéria Orgânica? '))
-            entrada(arqMatOrg, 0, quantidade)
+            entrada(arqMatOrg, quantidade)
         elif residuo == 2:
             # Depositando Papel e Papelão
             print('Pap e Pap')
