@@ -11,6 +11,9 @@ arqMet = 'metal.txt'
 arqOutr = 'outros.txt'
 arquivos = [arqMatOrg, arqPapPap, arqPlast, arqVidr, arqMet, arqOutr]
 
+# Definindo os valores máximos de cada depósito
+limMatOrg = limPapPap = limPlast = limVidr = limMet = limOutr = 200
+
 # Craindo os arquivos
 for n in arquivos:
     if not arquivoExiste(n):
@@ -32,23 +35,28 @@ while True:
         residuo = menu(['Matéria Orgânica', 'Papel e Papelão', 'Plástico', 'Vidro', 'Metal', 'Outros', 'Sair'])
         if residuo == 1:
             # Depositando Mat. Org.
-            quantidade = float(input('Quantos kg de Matéria Orgânica? '))
-            entrada(arqMatOrg, quantidade)
+            quantidade = leiaFloat('Quantos kg de Matéria Orgânica? ')
+            entrada(arqMatOrg, quantidade, limMatOrg)
         elif residuo == 2:
             # Depositando Papel e Papelão
-            print('Pap e Pap')
+            quantidade = leiaFloat('Quantos kg de Papel e Papelão? ')
+            entrada(arqPapPap, quantidade, limPapPap)
         elif residuo == 3:
             # Depositando Plast
-            print('Plast')
+            quantidade = leiaFloat('Quantos kg de Plástico? ')
+            entrada(arqPlast, quantidade, limPlast)
         elif residuo == 4:
             # Depositando vidr
-            print('Vidr')
+            quantidade = leiaFloat('Quantos kg de Vidro? ')
+            entrada(arqVidr, quantidade, limVidr)
         elif residuo == 5:
             # Depositando Metal
-            print('Metal')
+            quantidade = leiaFloat('Quantos kg de Metal? ')
+            entrada(arqMet, quantidade, limMet)
         elif residuo == 6:
             #Depositando Outros
-            print('Outros')
+            quantidade = leiaFloat('Quantos kg de Outros? ')
+            entrada(arqOutr, quantidade, limOutr)
         elif residuo == 7:
             # Saindo dessa operação
             break

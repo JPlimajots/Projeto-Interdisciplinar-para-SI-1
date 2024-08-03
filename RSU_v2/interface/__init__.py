@@ -12,6 +12,20 @@ def leiaInt(msg):
             return n
 
 
+def leiaFloat(msg):
+    while True:
+        try:
+            n = float(input(msg))
+        except (ValueError, TypeError):
+            print('\033[31mERRO: por favor, digite um número válido.\033[m')
+            continue
+        except (KeyboardInterrupt):
+            print('\033[31mUsuário preferiu não digitar esse número.\033[m')
+            return 0
+        else:
+            return abs(n)
+
+
 def linha(tam = 42):
     return '-' * tam
 

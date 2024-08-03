@@ -39,7 +39,7 @@ def criarArquivo(nome):
         a.close()'''
 
 
-def entrada(arq, quantidade):
+def entrada(arq, quantidade, máximo):
     try:
         a = open(arq, 'rt')
         dado = a.readline()
@@ -50,11 +50,17 @@ def entrada(arq, quantidade):
     else:
         try:
             soma = quantidade + float(dado)
-            a.write(str(soma))          
+            if soma <= máximo:
+                a.write(str(soma))
+            else:
+                a.write(str(dado))          
         except:
             print('Houve um ERRO na hora de escrever os dados!')
         else:
-            print(f'Novo registro adicionado.')
+            if soma <= máximo:
+                print(f'Novo registro adicionado.')
+            else:
+                print('Depósito não suporta a adição dessa quantidade de resíduo.')
             a.close()
 
 
