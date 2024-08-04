@@ -69,7 +69,34 @@ while True:
         cabeçalho('Opção 2')
     while resposta == 3:
         # Opção de zerar algum depósito
-        cabeçalho('Opção 3')
+        cabeçalho('ESVAZIAR DEPÓSITO')
+        sleep(1)
+        print('Qual depósito será esvaziado?')
+        deposito = menu(['Matéria Orgânica', 'Papel e Papelão', 'Plástico', 'Vidro', 'Metal', 'Outros', 'Sair'])
+        if deposito == 1:
+            # Esvaziando Matéria Orgânica
+            esvaziar(arqMatOrg)
+        elif deposito == 2:
+            # Esvaziar Papel e Papelão
+            esvaziar(arqPapPap)
+        elif deposito == 3:
+            # Esvaziar Plástico
+            esvaziar(arqPlast)
+        elif deposito == 4:
+            # Esvaziar Vidro
+            esvaziar(arqVidr)
+        elif deposito == 5:
+            # Esvaziar Metal
+            esvaziar(arqMet)
+        elif esvaziar == 6:
+            # Esvaziar Outros
+            esvaziar(arqOutr)
+        elif deposito == 7:
+            # Saindo dessa operação
+            break
+        else:
+            # Digitou uma opção errada
+            print('\033[31mERRO! Digite uma opção válida!\033[m')    
     if resposta == 4:
         # Opção de sair do programa
         break

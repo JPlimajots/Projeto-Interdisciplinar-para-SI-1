@@ -46,9 +46,3 @@ def menu(lista):
     return opc
 
 
-'''def enumero(str):
-    try:
-        float(str)
-    except ValueError:
-        return False
-    return True'''

@@ -64,6 +64,25 @@ def entrada(arq, quantidade, máximo):
             a.close()
 
 
+def esvaziar(arq):
+    try:
+        a = open(arq, 'rt')
+        dado = a.readline()
+        a.close
+        a = open(arq, 'wt')
+    except:
+        print('Houve um ERRO na abertura do arquivo!')
+    else:
+        try:
+            soma = float(dado) - float(dado)
+            a.write(str(soma))
+        except:
+            print('Houve um ERRO na hora de escrever os dados!')
+        else:
+            print('Depósito esvaziado com sucesso.')
+            a.close()
+
+
 '''def residuo(opções):
     while True:
         escolha = menu(opções)
