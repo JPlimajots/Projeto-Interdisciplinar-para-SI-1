@@ -1,4 +1,5 @@
 from RSU_v2.interface import *
+from time import sleep
 
 
 def arquivoExiste(nome):
@@ -81,6 +82,25 @@ def esvaziar(arq):
         else:
             print('Depósito esvaziado com sucesso.')
             a.close()
+
+
+def aviso(arqs):
+    try:
+        for n in arqs:
+            sleep(0.5)
+            a = open(n, 'rt')
+            dado = a.readline()
+            a.close
+            if 100 <= float(dado) < 150:
+                print(f'\033[33mO depósito {str(n).upper()[0:-4]} ultrapassou 50% de sua capacidade máxima.\033[m')
+            elif 150 <= float(dado) < 200:
+                print(f'\033[32mO depósito {str(n).upper()[0:-4]} ultrapassou 75% de sua capacidade máxima.\033[m')
+            elif float(dado) == 200:
+                print(f'\033[31mO depósito {str(n).upper()[0:-4]} está cheio.\033[m')
+        sleep(1)
+    except:
+        print('Houve um ERRO na abertura dos arquivos!')
+
 
 
 '''def residuo(opções):

@@ -23,12 +23,14 @@ for n in arquivos:
 cabeçalho('GERÊNCIADOR DE DESCARTE DE RSU')
 
 # Inicio do loop
-sleep(2)
+sleep(1)
 while True:
+    aviso(arquivos)
     cabeçalho('MENU PRINCIPAL')
     resposta = menu(['Entrada de Resíduo', 'Ver Depósitos', 'Esvaziar Depósito', 'Sair do Programa'])
     while resposta == 1:
         # Opção de dar entrada nos resíduos
+        aviso(arquivos)
         cabeçalho('ENTRADA DE RESÍDUO')
         sleep(1)
         print('Qual resíduo será depositado?')
@@ -66,9 +68,12 @@ while True:
        
     while resposta == 2:
         # Opção de ver os depósitos
-        cabeçalho('Opção 2')
+        aviso(arquivos)
+        cabeçalho('EM DESENVOLVIMENTO')
+        break
     while resposta == 3:
         # Opção de zerar algum depósito
+        aviso(arquivos)
         cabeçalho('ESVAZIAR DEPÓSITO')
         sleep(1)
         print('Qual depósito será esvaziado?')
