@@ -3,6 +3,11 @@ from time import sleep
 
 
 def arquivoExiste(nome):
+    """
+    --> Faz uma verificação se um arquivo existe.
+    :param nome: nome do arquivo
+    :return: retorna False caso o arquivo não exista, retorna True caso o arquivo exista
+    """
     try:
         a = open(nome, 'rt')
         a.close()
@@ -13,6 +18,11 @@ def arquivoExiste(nome):
 
 
 def criarArquivo(nome):
+    """
+    --> Cria um arquivo.
+    :param nome: nome do arquivo
+    :return: sem retorno
+    """
     try:
         a = open(nome, 'wt+')
         a.close()
@@ -41,6 +51,14 @@ def criarArquivo(nome):
 
 
 def entrada(arq, quantidade, máximo):
+    """
+    --> Recebe um valor e soma com o valor já existente dentro de um arquivo. Caso a soma não ultrapasse o valor limite,
+    o arquivo é atualizdo. Caso a soma ultrapasse o valor limite, o arquivo continua inalterado.
+    :param arq: nome do arquivo
+    :param quantidade: valor que será somado 
+    :param máximo: valor limite
+    :return: sem retorno
+    """
     try:
         a = open(arq, 'rt')
         dado = a.readline()
@@ -66,6 +84,11 @@ def entrada(arq, quantidade, máximo):
 
 
 def esvaziar(arq):
+    """
+    --> Busca o número dentro de um arquivo e raliza a soma pelo inverso do número.
+    :param arq: nome do arquivo
+    :return: sem retorno
+    """
     try:
         a = open(arq, 'rt')
         dado = a.readline()
@@ -84,10 +107,15 @@ def esvaziar(arq):
             a.close()
 
 
-def aviso(arqs):
+def aviso(arq):
+    """
+    --> Faz uma verificação dos números dentro de um arquivo e pode mostrar alguns avisos de acordo com o valor.
+    :param arq: nome do arquivo 
+    :return: sem retorno
+    """
     try:
-        for n in arqs:
-            sleep(0.5)
+        for n in arq:
+            sleep(0.2)
             a = open(n, 'rt')
             dado = a.readline()
             a.close
@@ -97,7 +125,6 @@ def aviso(arqs):
                 print(f'\033[32mO depósito {str(n).upper()[0:-4]} ultrapassou 75% de sua capacidade máxima.\033[m')
             elif float(dado) == 200:
                 print(f'\033[31mO depósito {str(n).upper()[0:-4]} está cheio.\033[m')
-        sleep(1)
     except:
         print('Houve um ERRO na abertura dos arquivos!')
 

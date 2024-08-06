@@ -5,7 +5,7 @@ from time import sleep
 # Definindo os nomes dos arquivos
 arqMatOrg = 'materiaorganica.txt'
 arqPapPap = 'papelpapelao.txt'
-arqPlast = 'platico.txt'
+arqPlast = 'plastico.txt'
 arqVidr = 'vidro.txt'
 arqMet = 'metal.txt'
 arqOutr = 'outros.txt'
@@ -108,4 +108,4 @@ while True:
     else:
         # Degitou uma opção errada
         print('\033[31mERO! Digite uma opção válida!\033[m')
-    sleep(2)
+    sleep(1)
