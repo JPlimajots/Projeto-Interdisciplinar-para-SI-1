@@ -69,7 +69,9 @@ while True:
     while resposta == 2:
         # Opção de ver os depósitos
         aviso(arquivos)
-        cabeçalho('EM DESENVOLVIMENTO')
+        cabeçalho('VER DEPÓSITOS')
+        print('Para continuar, basta fechar todos os gráficos.')
+        visualizar(arquivos, limMatOrg)
         break
     while resposta == 3:
         # Opção de zerar algum depósito
@@ -104,6 +106,7 @@ while True:
             print('\033[31mERRO! Digite uma opção válida!\033[m')    
     if resposta == 4:
         # Opção de sair do programa
+        cabeçalho('FINALIZANDO O PROGRAMA')
         break
     else:
         # Degitou uma opção errada

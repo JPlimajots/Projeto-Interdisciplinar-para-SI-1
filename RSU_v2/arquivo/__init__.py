@@ -1,5 +1,7 @@
 from RSU_v2.interface import *
 from time import sleep
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def arquivoExiste(nome):
@@ -129,6 +131,50 @@ def aviso(arq):
         print('Houve um ERRO na abertura dos arquivos!')
 
 
+
+def visualizar(arq, limDeposito):
+    """
+    --> Faz uma verificação dos números dentro dos arquivos e do valor limite para cada depósito, transforma em
+    percentual e mostra um gráfico de setores para cada arquivo.
+    :param arq: nome do arquivo
+    :param limDeposito: valor limite do depósito
+    :return: sem retorno
+    """
+    i = 0
+    try:
+        for n in arq:
+            a = open(n, 'rt')
+            dado = a.readline()
+            a.close
+            perResiduo = (100 * float(dado)) / limDeposito
+            perDeposito = ((limDeposito - float(dado)) * 100) / limDeposito
+            y = np.array([perResiduo, perDeposito])
+            if i == 0:
+                mylabels = ['Matéria Orgânica', 'Disponível']
+                mycolors = ['#D2691E', '#FFE4C4']
+            elif i == 1:
+                mylabels = ['Papel e Papelão', 'Disponível']
+                mycolors = ['#0000FF', '#FFE4C4']
+            elif i == 2:
+                mylabels = ['Plástico', 'Disponível']
+                mycolors = ['#FF0000', '#FFE4C4']
+            elif i == 3:
+                mylabels = ['Vidro', 'Disponível']
+                mycolors = ['#006400', '#FFE4C4']      
+            elif i == 4:
+                mylabels = ['Metal', 'Disponível']
+                mycolors = ['#FFFF00', '#FFE4C4']
+            elif i == 5:
+                mylabels = ['Outros', 'Disponível']
+                mycolors = ['#808080', '#FFE4C4']
+            myexplode = [0.02, 0]
+            plt.figure(n)
+            plt.pie(y, labels = mylabels, autopct='%1.1f%%', colors = mycolors, explode = myexplode)
+            plt.legend()
+            i += 1
+        plt.show()
+    except:
+        print('Houve um ERRO na abertura dos arquivos!')   
 
 '''def residuo(opções):
     while True:
