@@ -37,21 +37,6 @@ def criarArquivo(nome):
         print(f'Arquivo {nome} criado com sucesso!')
 
 
-'''def lerArquivo(nome):
-    try:
-        a = open(nome, 'rt')
-    except:
-        print('ERRO ao ler o arquivo!')
-    else:
-        cabeçalho('RESÍDUOS DESCARTADOS')
-        for linha in a:
-            dado = linha.split(';')
-            dado[1] = dado[1].replace('\n', '')
-            print(f'{dado[0]:<30}{dado[1]:>3} kg')
-    finally:
-        a.close()'''
-
-
 def entrada(arq, quantidade, máximo):
     """
     --> Recebe um valor e soma com o valor já existente dentro de um arquivo. Caso a soma não ultrapasse o valor limite,
@@ -117,16 +102,17 @@ def aviso(arq):
     """
     try:
         for n in arq:
-            sleep(0.2)
+            sleep(0.3)
             a = open(n, 'rt')
             dado = a.readline()
             a.close
-            if 100 <= float(dado) < 150:
+            if 10 <= float(dado) < 15:
                 print(f'\033[33mO depósito {str(n).upper()[0:-4]} ultrapassou 50% de sua capacidade máxima.\033[m')
-            elif 150 <= float(dado) < 200:
+            elif 15 <= float(dado) < 20:
                 print(f'\033[32mO depósito {str(n).upper()[0:-4]} ultrapassou 75% de sua capacidade máxima.\033[m')
-            elif float(dado) == 200:
+            elif float(dado) == 20:
                 print(f'\033[31mO depósito {str(n).upper()[0:-4]} está cheio.\033[m')
+        sleep(0.4)
     except:
         print('Houve um ERRO na abertura dos arquivos!')
 
@@ -164,9 +150,6 @@ def visualizar(arq, limDeposito):
             elif i == 4:
                 mylabels = ['Metal', 'Disponível']
                 mycolors = ['#FFFF00', '#FFE4C4']
-            elif i == 5:
-                mylabels = ['Outros', 'Disponível']
-                mycolors = ['#808080', '#FFE4C4']
             myexplode = [0.02, 0]
             plt.figure(n)
             plt.pie(y, labels = mylabels, autopct='%1.1f%%', colors = mycolors, explode = myexplode)

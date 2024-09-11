@@ -71,3 +71,22 @@ def menu(lista):
     return opc
 
 
+def exibir(msg, dados):
+    """
+    --> Acessa e lista os dados das empresas que estão dentro de uma matriz.
+    :param msg: mensagem de início
+    :param dados: matriz com as informações
+    :return: sem retorno
+    """
+    print(msg)
+    nome = dados[0][1:]
+    cnpj = dados[1][1:]
+    telefone = dados[2][1:]
+    site = dados[3][1:]
+    print(linha())
+    for i in range(len(nome)):
+        print(nome[i])
+        print(cnpj[i])
+        print(telefone[i])
+        print(site[i])
+        print(linha())
